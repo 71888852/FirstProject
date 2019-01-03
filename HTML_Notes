@@ -1,0 +1,294 @@
+
+ 基本标签：
+标题标签<h1>~<h6>
+段落<p></p>
+换行<br/>
+水平线<hr/>
+粗体<strong></strong>
+斜体<em></em>
+图像：<img src="相对路径/绝对路径" alt = "" width ="" height = "">
+超链接：
+几个页面间的跳转（热点文本/图像）：<p><a> href="" target="跳转后页面的路径（相对路径/绝对路径）"</a></p>
+锚链接：跳转到同一个页面的固定位置：<a href="#me"></a>
+				<a name="me">跳到我这里来</a>
+             跳转到不同页面的固定位置：1.html
+				<a href="2.html路径#me">点击我</a>
+			          2.html
+				<a name="me">跳到我这里来</a>
+功能连接:发邮件：<a href="mailto:xxx@xx.com">给站长写信</a>
+
+&lt;表示<  &gt;表示>  &nbsp;表示空格    &quot;表示引号 &copy;表示版权符号@
+
+<!--注释内容--> 
+
+结构标签：html新建自动生成的标签
+视频标签语法：<video src="视频路径" controls>点击播放视频</video>
+
+header: 标题头部区域的内容（用于页面或页面中的一块区域）
+footer:标记脚部区域的内容（用于整个页面或页面的一块区域）
+section:WEB页面中一块独立的区域
+article:独立的文章内容
+aside:相关的内容或应用（常用语侧边栏）
+nav:导航类辅助内容
+
+美化  CSS样式(Cascading Style Sheet)层叠样式表
+CSS注释/* */
+选择器：谁选择用｛｝里面的东西
+选择器｛
+属性：值；
+属性：值；
+｝
+1：标签选择器：选择器写法和标签是一致的，所有的这些标签会使用同一的样式
+如果个别某些h1不想使用这个样式怎么办？肯定不能使用h1这个标签选择器了
+如果某些段落P也想使用h1的这个样式怎么办？
+2:类选择器
+.red{
+   color:red;
+}
+<h1 class="red"></h1>
+3：ID选择器 一个页面只能使用一次这个ID，可以有多个不同ID
+#green{
+	color:green;	
+｝
+颜色  
+使用英文单词表示：black white, red...
+使用十六进制数字表示0-9 ABCDEF   RGB=RED GREEN BLUE
+
+怎么用CSS
+1:内部样式表
+<style></style>
+2:内联样式：作用比内部样式小
+<p style="color:red;font-size 22px;"></p>
+3:外部样式表
+创建一个外部的CSS文件：*.css,把样式写在这个文件中
+要用这个样式，就引入这个CSS文件
+如何引入CSS文件：<link rel="stylesheet" href="css地址">
+
+<link/>标签属于XHTML,@IMPORT属于CSS2.1,对于不兼容CSS2.1浏览器是无效的
+
+字体样式：
+font-family :设置字体的类型 font-family:"隶属";
+font-size:设置字体大小  font-size:12px;
+font-style 设置字体风格 font-style:italic;
+font-weight 设置字体粗细 font-weight:bold;
+font 在一个声明中设置所有字体属性 font:italic bold 36px "宋体";
+
+CSS文本字样：
+<span>标签：能让某几个字或者某个词语凸显出来
+<span 标签类型=“名称”></span>
+font-family:设置字体类型
+font-size:字体大小
+font-style（italic）:设置字体风格
+font-weight（bold）:设置字体粗细
+font:在一个生命中设置所有字体属性
+test-align:right; 设置元素水平对齐方式（left,center,justify）
+test-indent:20px; 设置文本缩进
+line-height:25px;设置文本的行高
+text-decoration:underline;设置文本的装饰(overline,line-through,none)
+vertical-align:middle,top.bottom
+text-shadow:color x-offset y-offset blur-radius;
+字体属性顺序：字体风格--字体粗细--字体大小--字体类型
+文本属性：color,text-align,text-indent,line-height,text-decoration
+伪类名称：
+a:link{}:未单击访问时超链接样式
+a:visited{}:单击连接后超链接样式
+a:hover{}:鼠标悬浮其上的超链接样式
+a:avtive{}:鼠标单击未释放的超链接样式
+设置伪类的顺序：a:link>a:visited>a:hover>a:avtive
+background-color:背景颜色填充
+background-image:背景图片
+background-image:url(图片路径);
+背景重复方式
+background-repeat属性
+repeat：沿水平和垂直两个方向平铺
+no-repeat: 不平铺，即只显示一次
+repeat-x: 只沿水平方向平铺
+repeat-y：只沿垂直方向平铺
+background-position
+Xpos Ypos： X表示水平位置，Y表示垂直位置
+X% Y%：使用百分比表示背景位置
+X,Y方向关键字：X（left,center,right）Y(top,center,botton)
+对背景图片的大小进行控制
+auto:默认值，使用背景图片保持原样
+percentage：使用百分比时，不是相对于背景的尺寸大小来计算，而是相对元素的宽度来计算
+cover:整个背景图片放大填充整个元素
+contain:让背景图片保持本身的宽高比例，将背景图片缩放到宽度或者高度正好适应所定义背景的区域
+点击一个链接后，为什么其余没点击过的链接也变成了visited的样式
+1，确认是否按照：a:link a:visited a:hover a:active顺序定义（love hate）
+2,  如果所有链接的href属性都一样（指向同一个地址）那么点击其中一个，其他也会显示被访问过
+IE浏览器是TRIDENT内核，加前缀：-ms-
+Chrome浏览器是WEBKIT内核，加前缀：-webkit-
+Safari浏览器是WEBKIT内核，加前缀：-webkit-
+Opera浏览器是Blink内核，加前缀：-o-
+Firefox浏览器是Mozilla内核，加前缀：-moz-
+-webkit-linear-gradient(position,color,color2,color3,....)
+
+列表的分类：无序列表，有序列表，定义列表
+无序列表：ul不能直接存放span标签
+<ul>
+<li>内容</li>
+<li>内容</li>
+</ul>
+没有顺序，每个<li>标签独占一行（块元素）
+一般用于导航，侧边栏新闻，有规律的图文组合模块等
+有序列表：ol不能直接存放span标签
+<ol>
+<li>内容</li>
+<li>内容</li>
+<ol>
+定义列表：分类
+<dl>
+<dt>水果</dt>
+<dd>苹果</dd>
+<dd>桃子</dd>
+<dd>西瓜</dd>
+<dl>
+
+列表的样式：
+list-style-type:(none无,disc默认实心圆,circle空心圆,square正方形,decimal数字)
+list-style-image
+list-style-position
+list-style（去掉小黑点，none）
+表格
+<table>
+<tr>
+	<td>
+	<td>
+</tr>
+<tr>
+	<td>
+</tr>
+<tr>
+	<td>
+	<td>
+</tr>
+</table>
+合并单元格
+跨列：
+<table>
+<tr>
+	<td colspan="n">单元格内容</td>
+</tr>
+<tr>
+	<td>
+	<td>
+</tr>
+<tr>
+	<td>
+	<td>
+</tr>
+</table>
+
+跨行：
+<table>
+<tr>
+	<td rowspan="n">单元格内容</td>
+	<td &nbsp;</td>
+</tr>
+<tr>
+	<td>
+	<td>
+</tr>
+<tr>
+	<td rowspan="n">单元格内容</td>
+	<td>
+	<td>
+</tr>
+<tr>
+	<td>
+	<td>
+</tr>
+</table>
+
+<input type="text" name="fname" value="text"/>
+text:input类型  fname:input元素名称 text:input元素的值
+
+使用border-radius制作圆形
+元素的高度和宽度必须相同
+圆角的半径为元素宽度的一般，或者直接设置圆角半径值为50%
+
+使用border-radius制作制作半圆
+制作上半圆或者下半圆时，元素的宽度是高度的两倍，而且圆角半径为元素的高度值
+制作左半圆或者右半圆时，元素的高度是宽度的两倍，而且圆角半径为元素的宽度值
+
+使用border-radius制作制作扇形(遵循“三通，一不同”原则）
+“三同”是元素宽度，高度，圆角半径相同
+“一不同”是圆角取值位置不同
+
+盒子阴影
+box-shadow:inset x-offset y-offset blur-radius color;(内阴影）没有inset的话默认外阴影
+标准文档流组成
+块级元素（block）
+<h1>...<h6><p><div>列表
+内联元素（inline）
+<span><a><img/><strong>
+内联标签可以包含于块级标签中，成为它的子元素，而反过来则不成立
+display属性
+block:块级元素的默认值，元素会被显示为块级元素，该元素前后会带有换行符
+inline:内联元素的默认值，元素会被显示为内联元素，该元素前后没有换行符
+inline-block:行内块元素，元素既具有内联元素的特性，也具有块元素的特性
+none:设置元素不会被显示（鼠标移入显示，移出消失）
+display特性：块级元素与行级元素的转变（block，inline）
+	     控制块级元素排到一行（inline-block）
+	     控制元素的显示和隐藏（none）
+块元素排在一行的方法
+inline-block
+float（属性）：left：元素向左浮动
+	        right：元素向右浮动
+	         none：默认值，元素不浮动，并会显示在其文本中出现的位置
+float:可以让元素排在一行并支持宽度和高度，可以决定排列方向
+float浮动以后元素脱离文档流，会对周围的元素产生影响，必须在他的父级上添加清楚浮动的样式
+display:inline-block
+可以让元素排在一起，并且支持宽度和高度，代码实现起来方便
+位置方向不可控制，会解析空格
+清除浮动-clear
+clear属性：可以清除浮动对其他元素的影响，可是依然解决不了父级边框塌陷问题
+left：在左侧不允许浮动元素
+right：在右侧不允许浮动元素
+both：在左右两侧不允许浮动元素
+none：默认值，允许浮动元素出现在两侧
+解决父级边框塌陷问题：
+浮动元素后面加空div：缺点，空div会造成HTML代码冗余
+设计父元素的高度：缺点，元素固定高会降低扩展性
+
+父级添加overflow属性：下拉列表框的场景不能用
+overflow属性：
+visible：默认值，内容不会被修剪，会呈现在盒子之外
+hidden：内容会被修剪，并且其余内容不可见
+scroll：内容会被修剪，但是浏览器会显示滚动条以便查看其余内容
+auto：如果内容被修剪，则浏览器会显示滚动条以便查看其余内容
+
+父级添加伪类after：可以给其他需要解决同样问题的地方添加同样的class="clear"伪类选择器
+例子：<div id="father" class="clear">
+          </div>
+.clear:after{
+	content:";  在clear类后面添加内容为空
+	display:block; 把添加的内容转化为元素
+	clear:both; 清除这个元素两边的浮动
+
+position定位属性
+static：默认，没有定位
+relative：相对定位 （相对自身原来的位置进行偏移：top、left、right、bottom）
+absolute：绝对定位（偏移：top、left、right、bottom）默认是根据浏览器大小边框，如果在父级上加position：relative的话，absolute会根据父级的边框来定位
+fixed：固定定位：侧边栏，固定导航栏
+z-index属性：调整元素定位时候重叠层的上下位置
+z-index属性值：整数，默认值为0
+设置了position属性时，z-index 属性可以设置各元素之间的重叠高低关系
+z-index值大的层位于其值小的层的上方
+opacity:x    x值为0-1，值越小越透明 兼容非IE浏览器
+filter:alpha(opacity=x)  x值为0-100，值越小越透明，兼容ie浏览器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
